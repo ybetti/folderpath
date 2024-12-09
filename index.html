@@ -3,17 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>動的リンク生成</title>
+    <title>動的リンク生成ページ</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        header img {
+            max-width: 100%;
+            height: auto;
+        }
+        #button-container {
+            text-align: center;
+            margin: 20px;
+        }
         button {
             margin: 5px;
             padding: 10px 20px;
             font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ddd;
         }
     </style>
 </head>
 <body>
-    <h1>動的リンク生成ページ</h1>
+    <!-- ヘッダー部分に画像を埋め込む -->
+    <header>
+        <img src="example.jpg" alt="ヘッダー画像">
+    </header>
+
+    <!-- ボタンを配置するコンテナ -->
     <div id="button-container"></div>
 
     <script>
