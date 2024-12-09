@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>動的リンク生成</title>
+    <style>
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>動的リンク生成ページ</h1>
+    <div id="button-container"></div>
+
+    <script>
+        // フォルダリンク情報を格納
+        const folderLinks = [
+            { label: "1", path: "file:///C:/example/folder1" },
+            { label: "2", path: "file:///C:/example/folder2" },
+            { label: "3", path: "file:///C:/example/folder3" }
+        ];
+
+        // ボタンを生成する関数
+        function createButtons() {
+            const container = document.getElementById("button-container");
+
+            folderLinks.forEach(link => {
+                const button = document.createElement("button");
+                button.textContent = link.label;
+                button.onclick = () => {
+                    location.href = link.path; // リンク先に遷移
+                };
+                container.appendChild(button);
+            });
+        }
+
+        // ページ読み込み時にボタンを生成
+        window.onload = createButtons;
+    </script>
+</body>
+</html>
