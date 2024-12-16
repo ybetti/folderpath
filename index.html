@@ -3,70 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>動的リンク生成ページ</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            text-align: center;
-            background-color: #f4f4f4;
-            padding: 20px;
-        }
-        header img {
-            max-width: 100%;
-            height: auto;
-        }
-        #button-container {
-            text-align: center;
-            margin: 20px;
-        }
-        button {
-            margin: 5px;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #ddd;
-        }
-    </style>
+    <title>ローカルフォルダリンク</title>
 </head>
 <body>
-    <!-- ヘッダー部分に画像を埋め込む -->
-    <header>
-        <img src="OIP.jpg" alt="ヘッダー画像">
-    </header>
-
-    <!-- ボタンを配置するコンテナ -->
-    <div id="button-container"></div>
-
-    <script>
-        // フォルダリンク情報を格納
-        const folderLinks = [
-            { label: "1", path: "\C:\Users\y.urabe\Desktop\QR自動振り分け" },
-            { label: "2", path: "file:///C:/Users/y.urabe/Desktop/楽楽精算説明資料" },
-            { label: "3", path: "file:///C:/Users/y.urabe/Desktop/ソフト類" }
-        ];
-
-        // ボタンを生成する関数
-        function createButtons() {
-            const container = document.getElementById("button-container");
-
-            folderLinks.forEach(link => {
-                const button = document.createElement("button");
-                button.textContent = link.label;
-                button.onclick = () => {
-                    location.href = link.path; // リンク先に遷移
-                };
-                container.appendChild(button);
-            });
-        }
-
-        // ページ読み込み時にボタンを生成
-        window.onload = createButtons;
-    </script>
+    <h1>ローカルフォルダへのリンク</h1>
+    <ul>
+        <li><a href="file:///C:/Users/YourUsername/Documents" target="_blank">ドキュメントフォルダ</a></li>
+        <li><a href="file:///C:/Users/YourUsername/Desktop" target="_blank">デスクトップフォルダ</a></li>
+    </ul>
 </body>
 </html>
